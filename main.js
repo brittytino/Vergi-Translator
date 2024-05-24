@@ -12,7 +12,6 @@ selectTag.forEach((tag, id) => {
         tag.insertAdjacentHTML("beforeend", option);
     }
 });
-
 exchageIcon.addEventListener("click", () => {
     let tempText = fromText.value,
     tempLang = selectTag[0].value;
@@ -21,13 +20,11 @@ exchageIcon.addEventListener("click", () => {
     selectTag[0].value = selectTag[1].value;
     selectTag[1].value = tempLang;
 });
-
 fromText.addEventListener("keyup", () => {
     if(!fromText.value) {
         toText.value = "";
     }
 });
-
 translateBtn.addEventListener("click", () => {
     let text = fromText.value.trim(),
     translateFrom = selectTag[0].value,
