@@ -1,0 +1,318 @@
+
+@font-face {
+    font-family: 'Minecraft';
+    src: url('assets/fonts/minecraft-font/MinecraftRegular-Bmg3.otf') format('truetype');
+    font-weight: 1 1000;
+    font-style: oblique 0deg; 
+  }
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+*::selection {
+    background-color: rgba(128, 128, 128, 0);
+}
+
+*::-moz-selection {
+    background: rgba(128, 128, 128, 0);
+}
+ 
+
+* {
+    -webkit-tap-highlight-color: transparent;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+    font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+    
+}
+
+::-webkit-scrollbar{
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: #00000002;
+}
+::-webkit-scrollbar-thumb{
+   background-color: var(--primary-theme-color);
+   border-radius: 2px;
+
+}
+:root{
+    
+    cursor:default;
+
+    --border-color: #0a0a0a;
+    --nav-color-one: #0d0d179a;
+    --nav-color-two: #000000;
+    --body-color: #000000;
+    --dark-text: #101010;
+    --light-text: #ffffff;
+    --light-text-secondary: #b9b9b9;
+    --light-text-desc: #d8d8d8;
+    --primary-theme-color: #ff7b00;
+    --secondary-theme-color: #ffa600;   
+
+}
+
+body{
+    background-color: var(--body-color);
+    transition: all .3s;
+    position: relative;
+    color: var(--light-text);
+    overflow: hidden;
+}
+.scroll-enable{
+    overflow: unset;
+}
+.lightcolors{
+    --body-color: #ffffff;
+    --dark-text: #fff;
+    --light-text: #080808;
+    --nav-color-two: #f6f6f2;
+    --nav-color-one: #f1f1f17e;
+    --border-color: #ddd;
+    --light-text-secondary: #464853;
+    --light-text-desc: #020202; 
+    
+}
+
+a{
+    text-decoration: none;
+}
+header{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 9999;
+}
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 65px;
+    background:linear-gradient(to bottom, var(--nav-color-one) , var(--nav-color-two) );
+    padding: 0px 30px;
+    border-bottom: 1px solid var(--border-color);
+    transition: all .3s;
+    backdrop-filter: blur(5px);
+}
+.logo{
+    width: fit-content;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#logo-text svg path{
+    fill: var(--light-text);
+ 
+}
+.right-nav-button-containerv1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    height: 100%;
+    gap: 20px;
+}
+
+
+#visual-toggle-button{
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    cursor: pointer;
+}
+/* checkbox */
+#visual-toggle{
+    appearance: none;
+    display: none;
+}
+.svgIcon-toggle{
+    width: 25px;
+}
+.moon-svg{
+    width: 13px;
+    position: absolute;
+    transition: all .3s;
+}
+.sun-svg{
+    opacity: 0;
+    transition: all .3s;
+}
+.lightmode .sun-svg{
+    transform: rotate(180deg);
+    opacity: 1;
+}
+.lightmode .moon-svg{
+    opacity: 0;
+}
+.animate .moon-svg{
+    transform: rotate(360deg);
+    transition: all .3s;
+}
+
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 10px;
+    min-height: 100vh;
+  }
+  .containerv4{
+    max-width: 690px;
+    width: 100%;
+    padding: 30px;
+    background: var(--light-text);
+    border-radius: 7px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.01);
+  }
+  .wrapper{
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  .wrapper .text-input{
+    display: flex;
+    border-bottom: 1px solid #ccc;
+  }
+  .text-input .to-text{
+    border-radius: 0px;
+    border-left: 1px solid #ccc;
+  }
+  .text-input textarea{
+    height: 250px;
+    width: 100%;
+    border: none;
+    outline: none;
+    resize: none;
+    background: none;
+    font-size: 18px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    color: var(--dark-text);
+
+  }
+  .text-input textarea::placeholder{
+    color:var(--dark-text);
+}
+  .controls, li, .icons, .icons i{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .controls{
+    list-style: none;
+    padding: 12px 15px;
+  }
+  .controls .row .icons{
+    width: 38%;
+  }
+  .controls .row .icons i{
+    width: 50px;
+    color: var(--dark-text);
+    font-size: 14px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    justify-content: center;
+  }
+  .controls .row.from .icons{
+    padding-right: 15px;
+    border-right: 1px solid #666666;
+  }
+  .controls .row.to .icons{
+    padding-left: 15px;
+    border-left: 1px solid #666666;
+  }
+  .controls .row select{
+    color:#666666;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    background: transparent;
+    padding-left: 5px;
+  }
+  .text-input textarea::-webkit-scrollbar{
+    width: 4px;
+  }
+  .controls .row select::-webkit-scrollbar{
+    width: 8px;
+  }
+  .text-input textarea::-webkit-scrollbar-track,
+  .controls .row select::-webkit-scrollbar-track{
+    background: #666666;
+}
+  .text-input textarea::-webkit-scrollbar-thumb{
+    background: #666666;
+    border-radius: 8px;
+  }
+  .controls .row select::-webkit-scrollbar-thumb{
+    background:var#666666;
+    border-radius: 8px;
+    border-right: 2px solid #666666;
+  }
+  .controls .exchange{
+    color: var(--dark-text);
+    cursor: pointer;
+    font-size: 16px;
+    transition: transform 0.2s ease;
+  }
+  .controls i:active{
+    transform: scale(0.9);
+  }
+  .containerv4 button{
+    width: 100%;
+    padding: 14px;
+    outline: none;
+    border: none;
+    color: var(--dark-text);
+    cursor: pointer;
+    margin-top: 20px;
+    font-size: 17px;
+    border-radius: 5px;
+    background: #ffae00;
+}
+  
+  @media (max-width: 660px){
+    .containerv4{
+      padding: 20px;
+    }
+    .wrapper .text-input{
+      flex-direction: column;
+    }
+    .text-input .to-text{
+      border-left: 0px;
+      border-top: 1px solid var(--dark-text);
+    }
+    .text-input textarea{
+      height: 200px;
+    }
+    .controls .row .icons{
+      display: none;
+    }
+    .containerv4 button{
+      padding: 13px;
+      font-size: 16px;
+    }
+    .controls .row select{
+      font-size: 16px;
+    }
+    .controls .exchange{
+      font-size: 14px;
+    }
+  }
+
+
